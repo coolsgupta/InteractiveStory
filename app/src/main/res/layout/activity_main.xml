@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.MainActivity"
+        android:background="@android:color/white">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/titleImageView"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/main_title"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            android:contentDescription="Signals from Mars"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/startButton"
+            android:text="START YOUR ADVENTURE"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@android:color/white"
+            android:textColor="#FF3A8AEC" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/nameEditText"
+            android:hint="Enter your name to start"
+            android:layout_above="@+id/startButton"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:maxLength="30" />
+    </RelativeLayout>
+
+    <fragment
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:id="@+id/fragment_navigation_drawer"
+        app:layoutGravity="start"
+        app:layout="@layout/fragment_navigation_drawer"
+        android:name="com.sgupta.interactivestory.ui.NavigationDrawerFragment"
+        tools:layout="@layout/fragment_navigation_drawer"/>
+</android.support.v4.widget.DrawerLayout>
